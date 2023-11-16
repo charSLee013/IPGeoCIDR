@@ -56,9 +56,9 @@ func main() {
 	defer wg.Wait()                     // Wait for them at the end
 
 	// Start the goroutines
-	go parseCIDR(*cidr, ipChan, &wg)                        // Parse the CIDR and send IP addresses to ipChan
-	go queryCountry(ipChan, matchIPChan, countryRegex, &wg,*concurrency) // Query the country and send matched countries and IP addresses to countryChan
-	go writeOutput(matchIPChan, *output, &wg)               // Write the output content to outputChan and the output file
+	go parseCIDR(*cidr, ipChan, &wg)                                      // Parse the CIDR and send IP addresses to ipChan
+	go queryCountry(ipChan, matchIPChan, countryRegex, &wg, *concurrency) // Query the country and send matched countries and IP addresses to countryChan
+	go writeOutput(matchIPChan, *output, &wg)                             // Write the output content to outputChan and the output file
 
 	// 所有goroutine完成后的打印语句
 	wg.Wait() // 确保所有goroutine已完成

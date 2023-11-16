@@ -1,7 +1,7 @@
 # IP地址地理位置匹配工具 🌍
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/charSLee013/IPGeoCIDR/blob/main/LICENSE)
-[![Go Report Card](https://goreportcard.com/badge/github.com/charSLee013/IPGeoCIDR)](https://goreportcard.com/report/github.com/charSLee013/IPGeoCIDR)
+[![Go Report Card](https://goreportcard.com//badge/github.com/charSLee013/IPGeoCIDR)](https://goreportcard.com/report/github.com/charSLee013/IPGeoCIDR)
 
 该项目是一个用于查询IP地址地理位置的工具，它可以根据提供的CIDR或CIDR文件，查询其中每个IP地址所属的国家，并将匹配的IP地址保存到输出文件中.
 

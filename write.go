@@ -9,7 +9,7 @@ import (
 
 // writeOutput writes the output content to a channel and the output file
 func writeOutput(outputChan <-chan string, output string, wg *sync.WaitGroup) {
-	defer wg.Done()  // Decrease the wait group counter when done
+	defer wg.Done() // Decrease the wait group counter when done
 	// Open the output file and defer its closing
 	out, err := os.OpenFile(output, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666) // Open an existing file and truncate it, or create a new file
 	checkError(err, "Failed to open the output file")

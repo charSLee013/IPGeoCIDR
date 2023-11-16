@@ -11,7 +11,7 @@ import (
 
 // parseCIDR parses the CIDR and sends IP addresses to a channel
 func parseCIDR(cidr string, ipChan chan<- string, wg *sync.WaitGroup) {
-	defer wg.Done()  // Decrease the wait group counter when done
+	defer wg.Done()     // Decrease the wait group counter when done
 	defer close(ipChan) // Close the ip channel when done
 	_, _, err := net.ParseCIDR(cidr)
 	if err == nil {
@@ -24,7 +24,7 @@ func parseCIDR(cidr string, ipChan chan<- string, wg *sync.WaitGroup) {
 		defer file.Close()
 		reader := bufio.NewScanner(file)
 		reader.Split(bufio.ScanLines)
-		for reader.Scan(){
+		for reader.Scan() {
 			ipChan <- reader.Text()
 		}
 	}

@@ -59,7 +59,7 @@ func queryCountry(ipChan <-chan string, countryChan chan<- string, countryRegex 
 						countryChan <- ip.String()
 					}
 					// 每遍历1000打印信息
-					if totalIPs % 1000 == 0{
+					if totalIPs%1000 == 0 {
 						fmt.Printf("\r已遍历IP地址数量: %d, 匹配成功的IP地址数量: %d", totalIPs, matchedIPs)
 					}
 				}
